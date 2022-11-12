@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
+import 'package:konnect/views/lading_view/lading_view.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -10,6 +12,17 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
+  @override
+  void initState() {
+    super.initState();
+     redirectToNextScreen() ;
+  }
+
+  redirectToNextScreen() async {
+    await Future.delayed(Duration(seconds: 2));
+    Get.offAll(() => LandingView());
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -33,23 +46,23 @@ class _SplashViewState extends State<SplashView> {
                 Container(
                   height: 200,
                   width: 200,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(170)),
+                  child: Image.asset("assets/icons/logo (2).png"),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
-                Text(
+                const Text(
                   "Konnect",
-                  style: primaryFont.copyWith(
+                  style: TextStyle(
+                      fontFamily: "Copperplate Gothic",
                       color: Colors.white,
                       fontSize: 46,
                       fontWeight: FontWeight.bold),
                 ),
-                Text(
+                const Text(
                   "For Business",
-                  style: primaryFont.copyWith(
+                  style: TextStyle(
+                      fontFamily: "Copperplate Gothic",
                       color: Colors.white,
                       fontSize: 46,
                       fontWeight: FontWeight.bold),
