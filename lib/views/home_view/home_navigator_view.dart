@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/views/home_view/home_view.dart';
+import 'package:konnect/views/store_view/store_main_list_view.dart';
 import 'package:konnect/views/transactions_view/transactions_view.dart';
 
 class HomePageWithNavigation extends StatefulWidget {
@@ -24,8 +25,7 @@ class _HomePageWithNavigationState extends State<HomePageWithNavigation> {
   List pages = [
     HomeView(),
     TransactionView(),
-    // MembershipScreen(),
-    HomeView(),
+    StoreMainListView(),
     HomeView(),
     HomeView(),
   ];
