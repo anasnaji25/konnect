@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
 import 'package:konnect/controllers/transaction_controller.dart';
+import 'package:konnect/views/store_view/preview_offer_view.dart';
 
 class CreateAnOfferSecondScreen extends StatefulWidget {
   const CreateAnOfferSecondScreen({super.key});
@@ -391,7 +392,7 @@ class _CreateAnOfferSecondScreenState extends State<CreateAnOfferSecondScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 15,top: 10),
+                        padding: const EdgeInsets.only(left: 15, top: 10),
                         child: Text("An offer can run for max 90 days only",
                             style: primaryFont.copyWith(fontSize: 9)),
                       ),
@@ -400,6 +401,60 @@ class _CreateAnOfferSecondScreenState extends State<CreateAnOfferSecondScreen> {
                 ],
               ),
             ),
+          ),
+        ),
+        bottomNavigationBar: Container(
+          height: 120,
+          color: Colors.white,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 30, right: 20),
+                child: InkWell(
+                  onTap: () {
+                    Get.to(() => const PreviewYourOfferView());
+                  },
+                  child: Container(
+                    height: 40,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        gradient: LinearGradient(
+                            colors: [secondaryColor, primaryColor])),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Preview",
+                      style: primaryFont.copyWith(
+                          color: Colors.white, fontSize: 15),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30, right: 20),
+                child: InkWell(
+                  onTap: () {
+                    // Get.to(() => const SignInView());
+                    Get.back();
+                  },
+                  child: Container(
+                    height: 40,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border.all(color: Colors.black)),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Back",
+                      style: primaryFont.copyWith(fontSize: 15),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

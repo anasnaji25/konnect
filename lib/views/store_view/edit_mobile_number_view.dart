@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
+import 'package:konnect/const/helpers/text_field_style_helpers.dart';
 import 'package:konnect/controllers/transaction_controller.dart';
+import 'package:konnect/views/store_view/enter_otp_screen_view.dart';
 
-class CommonAppBarTemplate extends StatefulWidget {
-  const CommonAppBarTemplate({super.key});
+class EditMobileNumberView extends StatefulWidget {
+  const EditMobileNumberView({super.key});
 
   @override
-  State<CommonAppBarTemplate> createState() => _CommonAppBarTemplateState();
+  State<EditMobileNumberView> createState() => _EditMobileNumberViewState();
 }
 
-class _CommonAppBarTemplateState extends State<CommonAppBarTemplate> {
+class _EditMobileNumberViewState extends State<EditMobileNumberView> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -71,13 +73,13 @@ class _CommonAppBarTemplateState extends State<CommonAppBarTemplate> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "Business Details",
+                                    "Edit your mobile number",
                                     style: primaryFont.copyWith(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w600),
                                   ),
                                   Text(
-                                    "Tell your customers more about your business",
+                                    "Enter the mobile number on which you want to\nreceive call from customers",
                                     style: primaryFont.copyWith(
                                         fontSize: 11,
                                         fontWeight: FontWeight.w300),
@@ -104,9 +106,87 @@ class _CommonAppBarTemplateState extends State<CommonAppBarTemplate> {
                   const SizedBox(
                     height: 20,
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15, right: 15),
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      decoration: InputDecoration(
+                          prefixIcon: Padding(
+                            padding: const EdgeInsets.only(left: 7),
+                            child: Container(
+                              width: 20,
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "+91",
+                                    style: primaryFont.copyWith(
+                                        fontSize: 16, color: Colors.black45),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          enabledBorder: enabledBorder,
+                          focusedBorder: focusedBorder),
+                    ),
+                  )
                 ],
               ),
             ),
+          ),
+        ),
+        bottomNavigationBar: Container(
+          height: 120,
+          color: Colors.white,
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 30, right: 20),
+                child: InkWell(
+                  onTap: () {
+                    Get.to(() => const VerifyOtpScreen());
+                  },
+                  child: Container(
+                    height: 40,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        gradient: LinearGradient(
+                            colors: [secondaryColor, primaryColor])),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Verify".toUpperCase(),
+                      style: primaryFont.copyWith(
+                          color: Colors.white, fontSize: 15),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30, right: 20),
+                child: InkWell(
+                  onTap: () {
+                    // Get.to(() => const SignInView());
+                    Get.back();
+                  },
+                  child: Container(
+                    height: 40,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        border: Border.all(color: Colors.black)),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Cancel",
+                      style: primaryFont.copyWith(fontSize: 15),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),

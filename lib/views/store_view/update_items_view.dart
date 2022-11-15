@@ -4,14 +4,14 @@ import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
 import 'package:konnect/controllers/transaction_controller.dart';
 
-class CommonAppBarTemplate extends StatefulWidget {
-  const CommonAppBarTemplate({super.key});
+class UpdateItemsView extends StatefulWidget {
+  const UpdateItemsView({super.key});
 
   @override
-  State<CommonAppBarTemplate> createState() => _CommonAppBarTemplateState();
+  State<UpdateItemsView> createState() => _UpdateItemsViewState();
 }
 
-class _CommonAppBarTemplateState extends State<CommonAppBarTemplate> {
+class _UpdateItemsViewState extends State<UpdateItemsView> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -23,6 +23,7 @@ class _CommonAppBarTemplateState extends State<CommonAppBarTemplate> {
         colors: [secondaryColor, primaryColor],
       )),
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         body: SafeArea(
           child: Container(
@@ -71,30 +72,22 @@ class _CommonAppBarTemplateState extends State<CommonAppBarTemplate> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "Business Details",
+                                    "Update Items",
                                     style: primaryFont.copyWith(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w600),
                                   ),
-                                  Text(
-                                    "Tell your customers more about your business",
-                                    style: primaryFont.copyWith(
-                                        fontSize: 11,
-                                        fontWeight: FontWeight.w300),
-                                  )
                                 ],
                               )
                             ],
                           ),
                           Row(
                             children: [
-                              InkWell(
-                                onTap: () {},
-                                child: Image.asset(
-                                  "assets/icons/8666690_help_circle_icon.png",
-                                  height: 25,
-                                ),
-                              ),
+                              Text(
+                                "Clear all".toUpperCase(),
+                                style: primaryFont.copyWith(
+                                    fontWeight: FontWeight.w600, fontSize: 15),
+                              )
                             ],
                           )
                         ],
@@ -104,9 +97,42 @@ class _CommonAppBarTemplateState extends State<CommonAppBarTemplate> {
                   const SizedBox(
                     height: 20,
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15, right: 15),
+                    child: Container(
+                      height: 50,
+                      width: size.width,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(7),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                blurRadius: 3,
+                                color: Colors.grey.withOpacity(0.5))
+                          ]),
+                      alignment: Alignment.centerLeft,
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: TextField(
+                          decoration:
+                              InputDecoration.collapsed(hintText: "Enter Item"),
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
+          ),
+        ),
+        bottomNavigationBar: Container(
+          height: 70,
+          color: const Color(0xff543DE0),
+          alignment: Alignment.center,
+          child: Text(
+            "UPDATE NOW",
+            style: primaryFont.copyWith(
+                color: Colors.white, fontWeight: FontWeight.w600, fontSize: 21),
           ),
         ),
       ),

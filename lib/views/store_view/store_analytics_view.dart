@@ -4,6 +4,7 @@ import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
 import 'package:konnect/controllers/transaction_controller.dart';
 import 'package:konnect/views/store_view/my_offers_view.dart';
+import 'package:konnect/views/store_view/store_updates_view.dart';
 
 class StroreAnalyticsView extends StatefulWidget {
   const StroreAnalyticsView({super.key});
@@ -842,27 +843,38 @@ class _StroreAnalyticsViewState extends State<StroreAnalyticsView> {
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          Container(
-                                            height: 30,
-                                            width: 120,
-                                            decoration: BoxDecoration(
-                                                border: Border.all(
-                                                    color: const Color.fromARGB(
-                                                        255, 22, 106, 202)),
-                                                borderRadius:
-                                                    BorderRadius.circular(20)),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Text(
-                                                  "List inventory"
-                                                      .toUpperCase(),
-                                                  style: primaryFont.copyWith(
-                                                      fontSize: 11,
-                                                      color: Colors.blue[800]),
-                                                )
-                                              ],
+                                          InkWell(
+                                            onTap: () {
+                                              Get.to(() => StoreUpdatesView());
+                                            },
+                                            child: Container(
+                                              height: 30,
+                                              width: 120,
+                                              decoration: BoxDecoration(
+                                                  border: Border.all(
+                                                      color:
+                                                          const Color.fromARGB(
+                                                              255,
+                                                              22,
+                                                              106,
+                                                              202)),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          20)),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    "List inventory"
+                                                        .toUpperCase(),
+                                                    style: primaryFont.copyWith(
+                                                        fontSize: 11,
+                                                        color:
+                                                            Colors.blue[800]),
+                                                  )
+                                                ],
+                                              ),
                                             ),
                                           )
                                         ],

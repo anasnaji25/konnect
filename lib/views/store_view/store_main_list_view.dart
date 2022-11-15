@@ -5,8 +5,17 @@ import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
 import 'package:konnect/controllers/transaction_controller.dart';
 import 'package:konnect/views/lading_view/lets_get_started_screen.dart';
+import 'package:konnect/views/store_view/amenities_and_features_view.dart';
 import 'package:konnect/views/store_view/business_details_view.dart';
+import 'package:konnect/views/store_view/business_location_view.dart';
+import 'package:konnect/views/store_view/create_offer_view.dart';
+import 'package:konnect/views/store_view/edit_mobile_number_view.dart';
+import 'package:konnect/views/store_view/edit_your_store_timing_view.dart';
+import 'package:konnect/views/store_view/my_offers_view.dart';
 import 'package:konnect/views/store_view/store_analytics_view.dart';
+import 'package:konnect/views/store_view/store_updates_view.dart';
+import 'package:konnect/views/store_view/tell_us_about_your_buisiness_view.dart';
+import 'package:konnect/views/store_view/type_of_services_you_offer_view.dart';
 import 'package:konnect/widgets/transaction_widgets/filter_bottom_sheet.dart';
 import 'package:konnect/widgets/transaction_widgets/transactions_card.dart';
 
@@ -144,8 +153,8 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                               padding:
                                   const EdgeInsets.only(right: 10, top: 25),
                               child: InkWell(
-                                onTap: (){
-                                  Get.to(()=> BusinessDetailsView());
+                                onTap: () {
+                                  Get.to(() => BusinessDetailsView());
                                 },
                                 child: Row(
                                   children: [
@@ -201,8 +210,8 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                   ],
                                 ),
                                 InkWell(
-                                  onTap: (){
-                                    Get.to(()=> const StroreAnalyticsView());
+                                  onTap: () {
+                                    Get.to(() => const StroreAnalyticsView());
                                   },
                                   child: Text(
                                     "View More".toUpperCase(),
@@ -520,9 +529,14 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                     )
                                   ],
                                 ),
-                                Icon(
-                                  Icons.edit,
-                                  size: 15,
+                                InkWell(
+                                  onTap: () {
+                                    Get.to(() => BusinessLocationView());
+                                  },
+                                  child: const Icon(
+                                    Icons.edit,
+                                    size: 15,
+                                  ),
                                 )
                               ],
                             ),
@@ -590,9 +604,14 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                     )
                                   ],
                                 ),
-                                const Icon(
-                                  Icons.edit,
-                                  size: 15,
+                                InkWell(
+                                  onTap: () {
+                                    Get.to(() => EditStoreTimigView());
+                                  },
+                                  child: const Icon(
+                                    Icons.edit,
+                                    size: 15,
+                                  ),
                                 )
                               ],
                             ),
@@ -642,9 +661,14 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                     )
                                   ],
                                 ),
-                                const Icon(
-                                  Icons.edit,
-                                  size: 15,
+                                InkWell(
+                                  onTap: () {
+                                    Get.to(() => EditMobileNumberView());
+                                  },
+                                  child: const Icon(
+                                    Icons.edit,
+                                    size: 15,
+                                  ),
                                 )
                               ],
                             ),
@@ -678,12 +702,18 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Text(
-                                          "Add About Your Business",
-                                          style: primaryFont.copyWith(
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.blue,
-                                              fontSize: 12),
+                                        InkWell(
+                                          onTap: () {
+                                            Get.to(() =>
+                                                TellUsAboutBuisniessView());
+                                          },
+                                          child: Text(
+                                            "Add About Your Business",
+                                            style: primaryFont.copyWith(
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.blue,
+                                                fontSize: 12),
+                                          ),
                                         ),
                                       ],
                                     )
@@ -755,33 +785,39 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          Container(
-                                            height: 30,
-                                            width: 120,
-                                            decoration: BoxDecoration(
-                                                border: Border.all(
-                                                    color: Colors.green),
-                                                borderRadius:
-                                                    BorderRadius.circular(20)),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                const Icon(
-                                                  Icons.add_circle_rounded,
-                                                  size: 17,
-                                                  color: Colors.green,
-                                                ),
-                                                const SizedBox(
-                                                  width: 7,
-                                                ),
-                                                Text(
-                                                  "CREATE OFFER",
-                                                  style: primaryFont.copyWith(
-                                                      fontSize: 11,
+                                          InkWell(
+                                            onTap: () {
+                                              Get.to(() => MyOffersView());
+                                            },
+                                            child: Container(
+                                              height: 30,
+                                              width: 120,
+                                              decoration: BoxDecoration(
+                                                  border: Border.all(
                                                       color: Colors.green),
-                                                )
-                                              ],
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          20)),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  const Icon(
+                                                    Icons.add_circle_rounded,
+                                                    size: 17,
+                                                    color: Colors.green,
+                                                  ),
+                                                  const SizedBox(
+                                                    width: 7,
+                                                  ),
+                                                  Text(
+                                                    "CREATE OFFER",
+                                                    style: primaryFont.copyWith(
+                                                        fontSize: 11,
+                                                        color: Colors.green),
+                                                  )
+                                                ],
+                                              ),
                                             ),
                                           )
                                         ],
@@ -865,36 +901,44 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          Container(
-                                            height: 30,
-                                            width: 125,
-                                            decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius:
-                                                    BorderRadius.circular(20)),
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 5, left: 5),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  const Icon(
-                                                    Icons.add_circle_rounded,
-                                                    size: 17,
-                                                    color: Color(0xff543DE0),
-                                                  ),
-                                                  const SizedBox(
-                                                    width: 7,
-                                                  ),
-                                                  Text(
-                                                    "ADD LOCATIONS",
-                                                    style: primaryFont.copyWith(
-                                                        fontSize: 10,
-                                                        color:
-                                                            Color(0xff543DE0)),
-                                                  )
-                                                ],
+                                          InkWell(
+                                            onTap: () {
+                                              Get.to(() =>
+                                                  TypeofServicesYouOffer());
+                                            },
+                                            child: Container(
+                                              height: 30,
+                                              width: 125,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          20)),
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 5, left: 5),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    const Icon(
+                                                      Icons.add_circle_rounded,
+                                                      size: 17,
+                                                      color: Color(0xff543DE0),
+                                                    ),
+                                                    const SizedBox(
+                                                      width: 7,
+                                                    ),
+                                                    Text(
+                                                      "ADD LOCATIONS",
+                                                      style:
+                                                          primaryFont.copyWith(
+                                                              fontSize: 10,
+                                                              color: const Color(
+                                                                  0xff543DE0)),
+                                                    )
+                                                  ],
+                                                ),
                                               ),
                                             ),
                                           )
@@ -969,27 +1013,34 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          Container(
-                                            height: 30,
-                                            width: 120,
-                                            decoration: BoxDecoration(
-                                                border: Border.all(
-                                                    color: const Color(
-                                                        0xff543DE0)),
-                                                borderRadius:
-                                                    BorderRadius.circular(20)),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Text(
-                                                  "ADD AMENITIES",
-                                                  style: primaryFont.copyWith(
-                                                      fontSize: 11,
+                                          InkWell(
+                                            onTap: () {
+                                              Get.to(() =>
+                                                  AmenitiesAndFeaturesView());
+                                            },
+                                            child: Container(
+                                              height: 30,
+                                              width: 120,
+                                              decoration: BoxDecoration(
+                                                  border: Border.all(
                                                       color: const Color(
                                                           0xff543DE0)),
-                                                )
-                                              ],
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          20)),
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    "ADD AMENITIES",
+                                                    style: primaryFont.copyWith(
+                                                        fontSize: 11,
+                                                        color: const Color(
+                                                            0xff543DE0)),
+                                                  )
+                                                ],
+                                              ),
                                             ),
                                           )
                                         ],
@@ -1000,7 +1051,7 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                               ],
                             ),
                             Image.asset(
-                              "assets/icons/shop.png",
+                              "assets/icons/SeekPng.com_ecommerce-png_2474944.png",
                               height: 90,
                             )
                           ],
@@ -1025,7 +1076,7 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Image.asset(
-                              "assets/icons/_x31_7_x2C__Home_x2C__house_x2C__location_x2C__pin_x2C__building.png",
+                              "assets/icons/pngfind.com-marketing-png-830397.png",
                               height: 90,
                             ),
                             Column(
@@ -1097,7 +1148,7 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                                     width: 7,
                                                   ),
                                                   Text(
-                                                    "ADD LOCATIONS",
+                                                    "ADD Links".toUpperCase(),
                                                     style: primaryFont.copyWith(
                                                         fontSize: 10,
                                                         color: const Color(
