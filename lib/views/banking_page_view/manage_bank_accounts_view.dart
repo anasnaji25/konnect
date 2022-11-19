@@ -3,17 +3,16 @@ import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
 import 'package:konnect/const/helpers/space_helpers.dart';
-import 'package:konnect/const/helpers/text_field_style_helpers.dart';
-import 'package:konnect/controllers/transaction_controller.dart';
+import 'package:konnect/views/banking_page_view/add_bank_accounts_view.dart';
 
-class EditSocilaMediaLinks extends StatefulWidget {
-  const EditSocilaMediaLinks({super.key});
+class ManageBankAccounts extends StatefulWidget {
+  const ManageBankAccounts({super.key});
 
   @override
-  State<EditSocilaMediaLinks> createState() => _EditSocilaMediaLinksState();
+  State<ManageBankAccounts> createState() => _ManageBankAccountsState();
 }
 
-class _EditSocilaMediaLinksState extends State<EditSocilaMediaLinks> {
+class _ManageBankAccountsState extends State<ManageBankAccounts> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -47,24 +46,6 @@ class _EditSocilaMediaLinksState extends State<EditSocilaMediaLinks> {
                         children: [
                           Row(
                             children: [
-                              InkWell(
-                                onTap: () {
-                                  Get.back();
-                                },
-                                child: Container(
-                                  height: 25,
-                                  width: 25,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      border: Border.all(color: Colors.black)),
-                                  alignment: Alignment.center,
-                                  child: const Icon(
-                                    Icons.arrow_back,
-                                    size: 22,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
                               const SizedBox(
                                 width: 10,
                               ),
@@ -73,7 +54,7 @@ class _EditSocilaMediaLinksState extends State<EditSocilaMediaLinks> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "Edit social media links",
+                                    "Manage Bank Accounts",
                                     style: primaryFont.copyWith(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w600),
@@ -103,67 +84,81 @@ class _EditSocilaMediaLinksState extends State<EditSocilaMediaLinks> {
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 15),
+                        padding: const EdgeInsets.only(left: 10),
                         child: Text(
-                          "Sharing link helps viewers stay connected with\nyou and your latest updates",
-                          style: primaryFont.copyWith(fontSize: 13),
+                          "You can add a new bank account in the name of\nPAYMENT METHODS",
+                          style: primaryFont.copyWith(fontSize: 15),
                         ),
                       ),
                     ],
                   ),
                   h15,
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 15),
-                        child: Text(
-                          "Website",
-                          style: primaryFont.copyWith(
-                              fontWeight: FontWeight.w600, fontSize: 15),
-                        ),
-                      ),
-                    ],
-                  ),
                   Padding(
-                    padding: const EdgeInsets.only(
-                        left: 15, right: 15, top: 5, bottom: 15),
+                    padding: const EdgeInsets.only(left: 10, right: 10),
                     child: Container(
-                      height: 55,
+                      height: 50,
                       width: size.width,
-                      child: TextField(
-                        decoration: InputDecoration(
-                            hintText: "Add business website",
-                            enabledBorder: enabledBorder,
-                            focusedBorder: focusedBorder),
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black),
+                          borderRadius: BorderRadius.circular(40)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(children: [
+                            Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Image.asset(
+                                  "assets/icons/NoPath - Copy (3).png",
+                                  height: 45),
+                            ),
+                            w10,
+                            Text(
+                              "**********1234",
+                              style: primaryFont.copyWith(
+                                  fontWeight: FontWeight.w600, fontSize: 15),
+                            )
+                          ]),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: Image.asset(
+                              "assets/icons/9004766_shield_security_protection_secure_icon.png",
+                              height: 25,
+                            ),
+                          )
+                        ],
                       ),
                     ),
                   ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 15),
-                        child: Text(
-                          "Youtube",
-                          style: primaryFont.copyWith(
-                              fontWeight: FontWeight.w600, fontSize: 15),
-                        ),
-                      ),
-                    ],
-                  ),
+                  h15,
                   Padding(
-                    padding: const EdgeInsets.only(
-                        left: 15, right: 15, top: 5, bottom: 15),
+                    padding: const EdgeInsets.only(left: 10, right: 10),
                     child: Container(
-                      height: 55,
+                      height: 50,
                       width: size.width,
-                      child: TextField(
-                        decoration: InputDecoration(
-                            hintText: "Youtube",
-                            enabledBorder: enabledBorder,
-                            focusedBorder: focusedBorder),
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black),
+                          borderRadius: BorderRadius.circular(40)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(children: [
+                            w10,
+                            Text(
+                              "IFSC :",
+                              style: primaryFont.copyWith(
+                                  fontWeight: FontWeight.w600, fontSize: 15),
+                            ),
+                            w10,
+                            Text(
+                              "CIUB00112233",
+                              style: primaryFont.copyWith(
+                                  fontWeight: FontWeight.w600, fontSize: 15),
+                            )
+                          ]),
+                        ],
                       ),
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
@@ -178,18 +173,17 @@ class _EditSocilaMediaLinksState extends State<EditSocilaMediaLinks> {
                 padding: const EdgeInsets.only(left: 30, right: 20),
                 child: InkWell(
                   onTap: () {
-                    Get.back();
+                    Get.to(()=> AddBankAccountView());
                   },
                   child: Container(
                     height: 40,
                     width: size.width,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
-                        gradient: LinearGradient(
-                            colors: [secondaryColor, primaryColor])),
+                        color: const Color(0xff543DE0)),
                     alignment: Alignment.center,
                     child: Text(
-                      "Save",
+                      "ADD NEW ACCOUNT",
                       style: primaryFont.copyWith(
                           color: Colors.white, fontSize: 15),
                     ),
@@ -198,27 +192,6 @@ class _EditSocilaMediaLinksState extends State<EditSocilaMediaLinks> {
               ),
               const SizedBox(
                 height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 30, right: 20),
-                child: InkWell(
-                  onTap: () {
-                    // Get.to(() => const SignInView());
-                    Get.back();
-                  },
-                  child: Container(
-                    height: 40,
-                    width: size.width,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(color: Colors.black)),
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Cancel",
-                      style: primaryFont.copyWith(fontSize: 15),
-                    ),
-                  ),
-                ),
               ),
             ],
           ),

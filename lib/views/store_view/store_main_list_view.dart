@@ -10,6 +10,7 @@ import 'package:konnect/views/store_view/business_details_view.dart';
 import 'package:konnect/views/store_view/business_location_view.dart';
 import 'package:konnect/views/store_view/create_offer_view.dart';
 import 'package:konnect/views/store_view/edit_mobile_number_view.dart';
+import 'package:konnect/views/store_view/edit_social_media_links.dart';
 import 'package:konnect/views/store_view/edit_your_store_timing_view.dart';
 import 'package:konnect/views/store_view/my_offers_view.dart';
 import 'package:konnect/views/store_view/store_analytics_view.dart';
@@ -1125,36 +1126,41 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          Container(
-                                            height: 30,
-                                            width: 125,
-                                            decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius:
-                                                    BorderRadius.circular(20)),
-                                            child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 5, left: 5),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  const Icon(
-                                                    Icons.add_circle_rounded,
-                                                    size: 17,
-                                                    color: Color(0xffD356F4),
-                                                  ),
-                                                  const SizedBox(
-                                                    width: 7,
-                                                  ),
-                                                  Text(
-                                                    "ADD Links".toUpperCase(),
-                                                    style: primaryFont.copyWith(
-                                                        fontSize: 10,
-                                                        color: const Color(
-                                                            0xffD356F4)),
-                                                  )
-                                                ],
+                                          InkWell(
+                                            onTap: (){
+                                              Get.to(()=> EditSocilaMediaLinks());
+                                            },
+                                            child: Container(
+                                              height: 30,
+                                              width: 125,
+                                              decoration: BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.circular(20)),
+                                              child: Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 5, left: 5),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: [
+                                                    const Icon(
+                                                      Icons.add_circle_rounded,
+                                                      size: 17,
+                                                      color: Color(0xffD356F4),
+                                                    ),
+                                                    const SizedBox(
+                                                      width: 7,
+                                                    ),
+                                                    Text(
+                                                      "ADD Links".toUpperCase(),
+                                                      style: primaryFont.copyWith(
+                                                          fontSize: 10,
+                                                          color: const Color(
+                                                              0xffD356F4)),
+                                                    )
+                                                  ],
+                                                ),
                                               ),
                                             ),
                                           )

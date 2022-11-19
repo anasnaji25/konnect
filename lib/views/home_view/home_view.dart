@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
+import 'package:konnect/views/chat_view/chat_list_view.dart';
+import 'package:konnect/views/my_qr_code_view/my_qr_code_view.dart';
+import 'package:konnect/views/payment_insurance_view/payment_insurane_view.dart';
+import 'package:konnect/views/payment_link_view/payment_link_view.dart';
+import 'package:konnect/views/share_store_views/share_store_view.dart';
+import 'package:konnect/views/staff_management_view/staff_management_view.dart';
 import 'package:konnect/widgets/transaction_widgets/transaction_history_card.dart';
 
 class HomeView extends StatefulWidget {
@@ -106,53 +113,68 @@ class _HomeViewState extends State<HomeView> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                "assets/icons/Group 1356.png",
-                                height: 50,
-                              ),
-                              const SizedBox(
-                                height: 15,
-                              ),
-                              Text(
-                                "Show QR",
-                                style: primaryFont.copyWith(fontSize: 9),
-                              )
-                            ],
+                          InkWell(
+                            onTap: () {
+                              Get.to(() => MyQrCodeView());
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/icons/Group 1356.png",
+                                  height: 50,
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                Text(
+                                  "Show QR",
+                                  style: primaryFont.copyWith(fontSize: 9),
+                                )
+                              ],
+                            ),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                "assets/icons/Group 1357.png",
-                                height: 50,
-                              ),
-                              const SizedBox(
-                                height: 15,
-                              ),
-                              Text(
-                                "Payment Link",
-                                style: primaryFont.copyWith(fontSize: 9),
-                              )
-                            ],
+                          InkWell(
+                            onTap: () {
+                              Get.to(() => PaymentLinkView());
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/icons/Group 1357.png",
+                                  height: 50,
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                Text(
+                                  "Payment Link",
+                                  style: primaryFont.copyWith(fontSize: 9),
+                                )
+                              ],
+                            ),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                "assets/icons/Group 1358.png",
-                                height: 50,
-                              ),
-                              const SizedBox(
-                                height: 15,
-                              ),
-                              Text(
-                                "Insurance",
-                                style: primaryFont.copyWith(fontSize: 9),
-                              )
-                            ],
+                          InkWell(
+                            onTap: () {
+                              Get.to(() => PaymentInsuranceView());
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/icons/Group 1358.png",
+                                  height: 50,
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                Text(
+                                  "Insurance",
+                                  style: primaryFont.copyWith(fontSize: 9),
+                                )
+                              ],
+                            ),
                           ),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -336,21 +358,26 @@ class _HomeViewState extends State<HomeView> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              "assets/icons/Group 1354.png",
-                              height: 40,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              "Share Store",
-                              style: primaryFont.copyWith(fontSize: 8),
-                            )
-                          ],
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => ShareStoreView());
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/icons/Group 1354.png",
+                                height: 40,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              Text(
+                                "Share Store",
+                                style: primaryFont.copyWith(fontSize: 8),
+                              )
+                            ],
+                          ),
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -368,37 +395,47 @@ class _HomeViewState extends State<HomeView> {
                             )
                           ],
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              "assets/icons/Group 1350.png",
-                              height: 40,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              "Customer Chat",
-                              style: primaryFont.copyWith(fontSize: 8),
-                            )
-                          ],
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => ChatListVew());
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/icons/Group 1350.png",
+                                height: 40,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              Text(
+                                "Customer Chat",
+                                style: primaryFont.copyWith(fontSize: 8),
+                              )
+                            ],
+                          ),
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              "assets/icons/Group 1351.png",
-                              height: 40,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              "Manage Staff",
-                              style: primaryFont.copyWith(fontSize: 8),
-                            )
-                          ],
+                        InkWell(
+                          onTap: () {
+                            Get.to(const ManageStaffAndRolesView());
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/icons/Group 1351.png",
+                                height: 40,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              Text(
+                                "Manage Staff",
+                                style: primaryFont.copyWith(fontSize: 8),
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     )

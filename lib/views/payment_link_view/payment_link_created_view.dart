@@ -3,17 +3,16 @@ import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
 import 'package:konnect/const/helpers/space_helpers.dart';
-import 'package:konnect/const/helpers/text_field_style_helpers.dart';
 import 'package:konnect/controllers/transaction_controller.dart';
 
-class EditSocilaMediaLinks extends StatefulWidget {
-  const EditSocilaMediaLinks({super.key});
+class PaymentLinkCreatedView extends StatefulWidget {
+  const PaymentLinkCreatedView({super.key});
 
   @override
-  State<EditSocilaMediaLinks> createState() => _EditSocilaMediaLinksState();
+  State<PaymentLinkCreatedView> createState() => _PaymentLinkCreatedViewState();
 }
 
-class _EditSocilaMediaLinksState extends State<EditSocilaMediaLinks> {
+class _PaymentLinkCreatedViewState extends State<PaymentLinkCreatedView> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -73,7 +72,7 @@ class _EditSocilaMediaLinksState extends State<EditSocilaMediaLinks> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "Edit social media links",
+                                    "Payment link created",
                                     style: primaryFont.copyWith(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w600),
@@ -82,17 +81,6 @@ class _EditSocilaMediaLinksState extends State<EditSocilaMediaLinks> {
                               )
                             ],
                           ),
-                          Row(
-                            children: [
-                              InkWell(
-                                onTap: () {},
-                                child: Image.asset(
-                                  "assets/icons/8666690_help_circle_icon.png",
-                                  height: 25,
-                                ),
-                              ),
-                            ],
-                          )
                         ],
                       ),
                     ),
@@ -100,127 +88,125 @@ class _EditSocilaMediaLinksState extends State<EditSocilaMediaLinks> {
                   const SizedBox(
                     height: 20,
                   ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 15),
-                        child: Text(
-                          "Sharing link helps viewers stay connected with\nyou and your latest updates",
-                          style: primaryFont.copyWith(fontSize: 13),
-                        ),
-                      ),
-                    ],
-                  ),
-                  h15,
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 15),
-                        child: Text(
-                          "Website",
-                          style: primaryFont.copyWith(
-                              fontWeight: FontWeight.w600, fontSize: 15),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 15, right: 15, top: 5, bottom: 15),
-                    child: Container(
-                      height: 55,
-                      width: size.width,
-                      child: TextField(
-                        decoration: InputDecoration(
-                            hintText: "Add business website",
-                            enabledBorder: enabledBorder,
-                            focusedBorder: focusedBorder),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 15),
-                        child: Text(
-                          "Youtube",
-                          style: primaryFont.copyWith(
-                              fontWeight: FontWeight.w600, fontSize: 15),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 15, right: 15, top: 5, bottom: 15),
-                    child: Container(
-                      height: 55,
-                      width: size.width,
-                      child: TextField(
-                        decoration: InputDecoration(
-                            hintText: "Youtube",
-                            enabledBorder: enabledBorder,
-                            focusedBorder: focusedBorder),
+                  Container(
+                    height: 63,
+                    width: size.width,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: Container(
+                                  height: 58,
+                                  width: 58,
+                                  child: Image.asset(
+                                      "assets/icons/pay_link/Group 1393.png"),
+                                ),
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "+91 9847563262",
+                                    style: primaryFont.copyWith(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 15),
+                                  ),
+                                  h5,
+                                  Text(
+                                    "Raja ana",
+                                    style: primaryFont.copyWith(
+                                        fontWeight: FontWeight.w100,
+                                        fontSize: 12),
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                "PENDING",
+                                style: primaryFont.copyWith(
+                                    color: Colors.blue, fontSize: 13),
+                              ),
+                              Text(
+                                "Valid till 5 Nov 5:30",
+                                style: primaryFont.copyWith(fontSize: 11),
+                              )
+                            ],
+                          )
+                        ],
                       ),
                     ),
                   ),
+                  const Divider(
+                    thickness: 1.5,
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "ID:IT78974888647DSF8787",
+                          style: primaryFont.copyWith(
+                              color: Colors.black45, fontSize: 12),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "₹1",
+                          style: primaryFont.copyWith(
+                              color: Colors.black, fontSize: 12),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Total bill amount for 04 Nov 2022",
+                          style: primaryFont.copyWith(
+                              color: Colors.black45, fontSize: 12),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Divider(
+                    thickness: 1.5,
+                  ),
+                  h50,
+                  Container(
+                    height: 55,
+                    width: 230,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: primaryColor),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Share link".toUpperCase(),
+                      style: primaryFont.copyWith(
+                          color: Colors.white, fontSize: 18),
+                    ),
+                  )
                 ],
               ),
             ),
-          ),
-        ),
-        bottomNavigationBar: Container(
-          height: 120,
-          color: Colors.white,
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 30, right: 20),
-                child: InkWell(
-                  onTap: () {
-                    Get.back();
-                  },
-                  child: Container(
-                    height: 40,
-                    width: size.width,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        gradient: LinearGradient(
-                            colors: [secondaryColor, primaryColor])),
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Save",
-                      style: primaryFont.copyWith(
-                          color: Colors.white, fontSize: 15),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 30, right: 20),
-                child: InkWell(
-                  onTap: () {
-                    // Get.to(() => const SignInView());
-                    Get.back();
-                  },
-                  child: Container(
-                    height: 40,
-                    width: size.width,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        border: Border.all(color: Colors.black)),
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Cancel",
-                      style: primaryFont.copyWith(fontSize: 15),
-                    ),
-                  ),
-                ),
-              ),
-            ],
           ),
         ),
       ),
