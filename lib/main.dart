@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:konnect/views/lading_view/lading_view.dart';
+import 'package:konnect/views/loan_apply_view/loan_apply_view.dart';
 import 'package:konnect/views/splash_view/splash_screen_view.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: SplashView(),
-      home: LandingView(),
+      home: LoanApplyView(),
     );
   }
 }
