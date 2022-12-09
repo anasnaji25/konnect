@@ -3,11 +3,14 @@ import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
 import 'package:konnect/views/chat_view/chat_list_view.dart';
+import 'package:konnect/views/loan_apply_view/loan_apply_view.dart';
 import 'package:konnect/views/my_qr_code_view/my_qr_code_view.dart';
 import 'package:konnect/views/payment_insurance_view/payment_insurane_view.dart';
 import 'package:konnect/views/payment_link_view/payment_link_view.dart';
+import 'package:konnect/views/profile_view/profile_view.dart';
 import 'package:konnect/views/share_store_views/share_store_view.dart';
 import 'package:konnect/views/staff_management_view/staff_management_view.dart';
+import 'package:konnect/views/store_view/store_updates_view.dart';
 import 'package:konnect/widgets/transaction_widgets/transaction_history_card.dart';
 
 class HomeView extends StatefulWidget {
@@ -76,9 +79,14 @@ class _HomeViewState extends State<HomeView> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(right: 20),
-                          child: Image.asset(
-                            "assets/icons/Group 1353.png",
-                            height: 80,
+                          child: InkWell(
+                            onTap: () {
+                              Get.to(() => ProfileView());
+                            },
+                            child: Image.asset(
+                              "assets/icons/Group 1353.png",
+                              height: 80,
+                            ),
                           ),
                         )
                       ],
@@ -176,21 +184,26 @@ class _HomeViewState extends State<HomeView> {
                               ],
                             ),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image.asset(
-                                "assets/icons/Group 1359.png",
-                                height: 50,
-                              ),
-                              const SizedBox(
-                                height: 15,
-                              ),
-                              Text(
-                                "Loans",
-                                style: primaryFont.copyWith(fontSize: 9),
-                              )
-                            ],
+                          InkWell(
+                            onTap: () {
+                              Get.to(() => LoanApplyView());
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/icons/Group 1359.png",
+                                  height: 50,
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                Text(
+                                  "Loans",
+                                  style: primaryFont.copyWith(fontSize: 9),
+                                )
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -379,21 +392,26 @@ class _HomeViewState extends State<HomeView> {
                             ],
                           ),
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              "assets/icons/Group 1355.png",
-                              height: 40,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            Text(
-                              "Store Update",
-                              style: primaryFont.copyWith(fontSize: 8),
-                            )
-                          ],
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => StoreUpdatesView());
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/icons/Group 1355.png",
+                                height: 40,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              Text(
+                                "Store Update",
+                                style: primaryFont.copyWith(fontSize: 8),
+                              )
+                            ],
+                          ),
                         ),
                         InkWell(
                           onTap: () {
