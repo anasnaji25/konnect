@@ -3,7 +3,8 @@ import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
 import 'package:konnect/views/lading_view/lets_get_started_screen.dart';
-import 'package:konnect/views/sign_up_view/otp_verification_sign_up.dart';
+import 'package:konnect/views/sign_up_view/loading_online_offline_view.dart';
+import 'package:konnect/widgets/sign_up_widgets/choose_pan_card_bottom_sheet.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -13,6 +14,7 @@ class SignUpView extends StatefulWidget {
 }
 
 class _SignUpViewState extends State<SignUpView> {
+  bool isAgreed = true;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -38,10 +40,9 @@ class _SignUpViewState extends State<SignUpView> {
                   child: Container(
                     child: Column(
                       children: [
-                        
                         Stack(
                           children: [
-                              Image.asset(
+                            Image.asset(
                               "assets/icons/Group 6.png",
                               fit: BoxFit.cover,
                               width: size.width * 0.65,
@@ -49,7 +50,8 @@ class _SignUpViewState extends State<SignUpView> {
                             Padding(
                               padding: const EdgeInsets.only(top: 30),
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.only(left: 15),
@@ -64,7 +66,6 @@ class _SignUpViewState extends State<SignUpView> {
                                       ),
                                     ),
                                   ),
-                                
                                   Padding(
                                     padding: const EdgeInsets.only(right: 15),
                                     child: Text(
@@ -93,248 +94,446 @@ class _SignUpViewState extends State<SignUpView> {
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35),
                         )),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          "Welcome :)",
-                          style: primaryFont.copyWith(
-                              fontSize: 24, fontWeight: FontWeight.w600),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "Create a new account your number and\nemail will be used id communication with Log in.",
-                          textAlign: TextAlign.center,
-                          style: primaryFont.copyWith(
-                              fontSize: 16, color: Colors.black87),
-                        ),
-                        const SizedBox(
-                          height: 120,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 30, right: 30),
-                          child: Container(
-                            height: 50,
-                            width: size.width,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                border: Border.all(color: Colors.black)),
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 10, right: 10),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.public,
-                                        color: Colors.black54,
-                                      ),
-                                      const SizedBox(
-                                        width: 15,
-                                      ),
-                                      Text(
-                                        "India +91",
-                                        style: primaryFont.copyWith(
-                                            color: Colors.black54),
-                                      )
-                                    ],
-                                  ),
-                                  Icon(Icons.keyboard_arrow_down_rounded)
-                                ],
-                              ),
-                            ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const SizedBox(
+                            height: 20,
                           ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 30, right: 30),
-                          child: Container(
-                            height: 50,
-                            width: size.width,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                border: Border.all(color: Colors.black)),
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 10, right: 10),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.phone_android,
-                                        color: Colors.black54,
-                                      ),
-                                      const SizedBox(
-                                        width: 15,
-                                      ),
-                                      Container(
-                                        width: 200,
-                                        child: TextField(
-                                          keyboardType: TextInputType.number,
-                                          decoration: InputDecoration.collapsed(
-                                              hintText: "Enter Mobile Number"),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 7,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 40),
-                          child: Row(
-                            children: [
-                              RichText(
-                                  text: TextSpan(
-                                      text: "Already have an account? ",
-                                      style: primaryFont.copyWith(
-                                          fontSize: 10, color: Colors.black),
-                                      children: [
-                                    TextSpan(
-                                        text: "Login",
-                                        style: primaryFont.copyWith(
-                                            fontSize: 10, color: Colors.green),
-                                        onEnter: (val) {
-                                          print(val);
-                                        })
-                                  ])),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 60,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 30, right: 20),
-                          child: InkWell(
-                            onTap: (){
-                              Get.to(()=> OtpVerifySignUpView());
-                            },
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, right: 30),
                             child: Container(
-                              height: 40,
-                              width: size.width,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  gradient: LinearGradient(
-                                      colors: [secondaryColor, primaryColor])),
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Next",
-                                style: primaryFont.copyWith(
-                                    color: Colors.white, fontSize: 15),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 40,
-                        ),
-                        Row(
-                          children: [
-                            Expanded(
-                              child: Container(
-                                height: 0.5,
-                                color: Colors.grey.withOpacity(0.5),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 2, right: 2),
-                              child: Text(
-                                "Or",
-                                style: primaryFont.copyWith(
-                                    color: Colors.grey, fontSize: 14),
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
-                                height: 0.5,
-                                color: Colors.grey.withOpacity(0.5),
-                              ),
-                            )
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 40,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 30, right: 20),
-                          child: InkWell(
-                            onTap: () {
-                              // Get.off(() => const SignUpView());
-                            },
-                            child: Container(
-                              height: 40,
+                              height: 45,
                               width: size.width,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(30),
                                   border: Border.all(color: Colors.black)),
-                              alignment: Alignment.center,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    "assets/icons/google-icon.png",
-                                    height: 20,
-                                  ),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "Login With Google",
-                                    style: primaryFont.copyWith(fontSize: 15),
-                                  ),
-                                ],
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 200,
+                                          child: const TextField(
+                                            keyboardType: TextInputType.number,
+                                            decoration:
+                                                InputDecoration.collapsed(
+                                                    hintText: "Name as per ID"),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        RichText(
-                            textAlign: TextAlign.center,
-                            text: TextSpan(
-                                text: "By continuing you agree to our ",
-                                style: primaryFont.copyWith(
-                                    fontSize: 12, color: Colors.black),
-                                children: [
-                                  TextSpan(
-                                      text: "terms of ",
-                                      style: primaryFont.copyWith(
-                                          fontSize: 12, color: Colors.blue),
-                                      onEnter: (val) {
-                                        print(val);
-                                      }),
-                                  TextSpan(
-                                    text: "use and",
-                                    style: primaryFont.copyWith(
-                                        fontSize: 12, color: Colors.black),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, right: 30),
+                            child: Container(
+                              height: 45,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  border: Border.all(color: Colors.black)),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 200,
+                                          child: const TextField(
+                                            keyboardType: TextInputType.number,
+                                            decoration:
+                                                InputDecoration.collapsed(
+                                                    hintText:
+                                                        "Enter Mobile Number"),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, right: 30),
+                            child: Container(
+                              height: 45,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  border: Border.all(color: Colors.black)),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 200,
+                                          child: const TextField(
+                                            keyboardType: TextInputType.number,
+                                            decoration:
+                                                InputDecoration.collapsed(
+                                                    hintText: "Email ID"),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, right: 30),
+                            child: Container(
+                              height: 45,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  border: Border.all(color: Colors.black)),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 250,
+                                          child: const TextField(
+                                            keyboardType: TextInputType.number,
+                                            decoration:
+                                                InputDecoration.collapsed(
+                                                    hintText: "Aadhar No"),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Icon(
+                                      Icons.cloud_upload,
+                                      color: Colors.grey,
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 40),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                RichText(
+                                    text: TextSpan(
+                                        text: "",
+                                        style: primaryFont.copyWith(
+                                            fontSize: 10, color: Colors.black),
+                                        children: [
+                                      TextSpan(
+                                          text: "Aadhar verification",
+                                          style: primaryFont.copyWith(
+                                              fontSize: 10,
+                                              color: Colors.green),
+                                          onEnter: (val) {
+                                            print(val);
+                                          })
+                                    ])),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, right: 30),
+                            child: InkWell(
+                              onTap: () {
+                                choosePanCardType(size, context);
+                              },
+                              child: Container(
+                                height: 45,
+                                width: size.width,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    border: Border.all(color: Colors.black)),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10, right: 10),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            width: 250,
+                                            child: TextField(
+                                              readOnly: true,
+                                              onTap: () {
+                                                choosePanCardType(
+                                                    size, context);
+                                              },
+                                              keyboardType:
+                                                  TextInputType.number,
+                                              decoration: InputDecoration.collapsed(
+                                                  hintText:
+                                                      "PAN card classification"),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      const Icon(
+                                        Icons.keyboard_arrow_down,
+                                        color: Colors.grey,
+                                      )
+                                    ],
                                   ),
-                                  TextSpan(
-                                    text: "\nprivacy policy",
-                                    style: primaryFont.copyWith(
-                                        fontSize: 12, color: Colors.blue),
-                                  )
-                                ])),
-                      ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, right: 30),
+                            child: Container(
+                              height: 45,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  border: Border.all(color: Colors.black)),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 250,
+                                          child: const TextField(
+                                            keyboardType: TextInputType.number,
+                                            decoration:
+                                                InputDecoration.collapsed(
+                                                    hintText: "Store Name"),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, right: 30),
+                            child: Container(
+                              height: 45,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  border: Border.all(color: Colors.black)),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 250,
+                                          child: const TextField(
+                                            keyboardType: TextInputType.number,
+                                            decoration:
+                                                InputDecoration.collapsed(
+                                                    hintText: "Address"),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, right: 30),
+                            child: Container(
+                              height: 45,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  border: Border.all(color: Colors.black)),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 250,
+                                          child: const TextField(
+                                            keyboardType: TextInputType.number,
+                                            decoration:
+                                                InputDecoration.collapsed(
+                                                    hintText: "GST Details"),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    const Icon(
+                                      Icons.cloud_upload,
+                                      color: Colors.grey,
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 40,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, right: 20),
+                            child: InkWell(
+                              onTap: () {
+                                // Get.to(() => OtpVerifySignUpView());
+                                _showMyOTPDialoge(size);
+                              },
+                              child: Container(
+                                height: 40,
+                                width: size.width,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(30),
+                                    gradient: LinearGradient(colors: [
+                                      secondaryColor,
+                                      primaryColor
+                                    ])),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "Sign up".toUpperCase(),
+                                  style: primaryFont.copyWith(
+                                      color: Colors.white, fontSize: 15),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(
+                                  text: "Have an Account Already? ",
+                                  style: primaryFont.copyWith(
+                                      fontSize: 10, color: Colors.black),
+                                  children: [
+                                    TextSpan(
+                                        text: "Login",
+                                        style: primaryFont.copyWith(
+                                            fontSize: 10, color: Colors.blue),
+                                        onEnter: (val) {
+                                          print(val);
+                                        }),
+                                  ])),
+                          const SizedBox(
+                            height: 40,
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 15,
+                                width: 15,
+                                child: Checkbox(
+                                    value: isAgreed,
+                                    onChanged: (val) {
+                                      setState(() {
+                                        isAgreed = val!;
+                                      });
+                                    }),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              RichText(
+                                  textAlign: TextAlign.center,
+                                  text: TextSpan(
+                                      text: "By continuing you agree to our ",
+                                      style: primaryFont.copyWith(
+                                          fontSize: 12, color: Colors.black),
+                                      children: [
+                                        TextSpan(
+                                            text: "terms of ",
+                                            style: primaryFont.copyWith(
+                                                fontSize: 12,
+                                                color: Colors.blue),
+                                            onEnter: (val) {
+                                              print(val);
+                                            }),
+                                        TextSpan(
+                                          text: "use and",
+                                          style: primaryFont.copyWith(
+                                              fontSize: 12,
+                                              color: Colors.black),
+                                        ),
+                                        TextSpan(
+                                          text: "\nprivacy policy",
+                                          style: primaryFont.copyWith(
+                                              fontSize: 12, color: Colors.blue),
+                                        )
+                                      ])),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 )
@@ -343,6 +542,149 @@ class _SignUpViewState extends State<SignUpView> {
           ),
         ),
       ),
+    );
+  }
+
+  Future<void> _showMyOTPDialoge(var size) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Container(
+          height: 300,
+          child: AlertDialog(
+            scrollable: true,
+            contentPadding: const EdgeInsets.all(12),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: <Widget>[
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "OTP Verification",
+                        style: primaryFont.copyWith(
+                            fontSize: 20, fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      RichText(
+                          text: TextSpan(
+                              text: "Enter OTP sent to 9876543210",
+                              style: primaryFont.copyWith(
+                                  fontSize: 13, color: Colors.black87),
+                              children: [
+                            TextSpan(
+                              text: " Change",
+                              style: primaryFont.copyWith(
+                                  fontSize: 13, color: Colors.blue),
+                            )
+                          ])),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 30, right: 30),
+                    child: Container(
+                      height: 50,
+                      width: size.width,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(color: Colors.black)),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10, right: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 5,
+                                ),
+                                Container(
+                                  width: 200,
+                                  child: const TextField(
+                                    keyboardType: TextInputType.number,
+                                    decoration: InputDecoration.collapsed(
+                                        hintText: "Enter Otp"),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 40),
+                    child: Row(
+                      children: [
+                        RichText(
+                            text: TextSpan(
+                                text: "Did not receive OTP yet? ",
+                                style: primaryFont.copyWith(
+                                    fontSize: 12, color: Colors.black),
+                                children: [
+                              TextSpan(
+                                  text: "Resend",
+                                  style: primaryFont.copyWith(
+                                      fontSize: 12, color: Colors.blue),
+                                  onEnter: (val) {
+                                    print(val);
+                                  })
+                            ])),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 60,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 30, right: 20),
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(() => const LoadingOnlineOfflineView());
+                      },
+                      child: Container(
+                        height: 40,
+                        width: size.width,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            gradient: LinearGradient(
+                                colors: [secondaryColor, primaryColor])),
+                        alignment: Alignment.center,
+                        child: Text(
+                          "Done",
+                          style: primaryFont.copyWith(
+                              color: Colors.white, fontSize: 15),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

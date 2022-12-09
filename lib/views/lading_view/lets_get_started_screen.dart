@@ -34,28 +34,37 @@ class _LetsGetStartedViewState extends State<LetsGetStartedView> {
                 const SizedBox(
                   height: 50,
                 ),
-                Image.asset("assets/icons/logoo.png"),
+                Image.asset("assets/icons/Group 1729.png",height: 150,fit: BoxFit.cover,),
                 const SizedBox(
-                  height: 50,
+                  height: 20,
+                ),
+                 Text(
+                  "Konnecting People\nand Finance",
+                  textAlign: TextAlign.center,
+                  style: primaryFont.copyWith(
+                      fontSize: 33, fontWeight: FontWeight.w600),
+                ),
+                  SizedBox(
+                  height: size.height * 0.18,
                 ),
                 Text(
                   "Let's Get Started",
                   style: primaryFont.copyWith(
-                      fontSize: 41, fontWeight: FontWeight.w600),
+                      fontSize: 21, fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(
                   height: 15,
                 ),
                 Text(
-                  "Sign Up Now And Enjoy\nSeamiess Payment Experience",
+                  "Sign Up Now And Enjoy Seamiess\nExperience",
                   textAlign: TextAlign.center,
                   style: primaryFont.copyWith(
                       color: Colors.black45,
-                      fontSize: 21,
+                      fontSize: 17,
                       fontWeight: FontWeight.w400),
                 ),
                 const SizedBox(
-                  height: 70,
+                  height: 80,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 30, right: 20),
@@ -96,7 +105,7 @@ class _LetsGetStartedViewState extends State<LetsGetStartedView> {
                           border: Border.all(color: Colors.black)),
                       alignment: Alignment.center,
                       child: Text(
-                        "Sign In",
+                        "Login",
                         style: primaryFont.copyWith(fontSize: 15),
                       ),
                     ),

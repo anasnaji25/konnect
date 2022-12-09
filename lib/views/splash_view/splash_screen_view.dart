@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
 import 'package:konnect/views/lading_view/lading_view.dart';
+import 'package:konnect/views/lading_view/lets_get_started_screen.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -19,8 +20,8 @@ class _SplashViewState extends State<SplashView> {
   }
 
   redirectToNextScreen() async {
-    await Future.delayed(Duration(seconds: 2));
-    Get.offAll(() => LandingView());
+    await Future.delayed(const Duration(seconds: 2));
+    Get.offAll(() => LetsGetStartedView());
   }
 
   @override
