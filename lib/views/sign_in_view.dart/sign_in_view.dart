@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
@@ -58,7 +59,7 @@ class _SignInViewState extends State<SignInView> {
                             Image.asset(
                               "assets/icons/Group 6.png",
                               fit: BoxFit.cover,
-                              width: size.width * 0.6,
+                              width: size.width * 0.6.h,
                             ),
                             Padding(
                               padding: const EdgeInsets.only(right: 15),
@@ -91,17 +92,17 @@ class _SignInViewState extends State<SignInView> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Image.asset("assets/icons/Group 1516.png"),
-                        const SizedBox(
-                          height: 20,
+                        Image.asset("assets/icons/Group 1516.png",height: 290.h,),
+                         SizedBox(
+                          height: 20.h,
                         ),
                         Text(
                           "Welcome Back",
                           style: primaryFont.copyWith(
-                              fontSize: 37, fontWeight: FontWeight.w600),
+                              fontSize: 37.sp, fontWeight: FontWeight.w600),
                         ),
-                        const SizedBox(
-                          height: 25,
+                         SizedBox(
+                          height: 25.h,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 30, right: 30),
@@ -142,8 +143,8 @@ class _SignInViewState extends State<SignInView> {
                             ),
                           ),
                         ),
-                        const SizedBox(
-                          height: 7,
+                         SizedBox(
+                          height: 7.h,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 40),
@@ -166,8 +167,8 @@ class _SignInViewState extends State<SignInView> {
                             ],
                           ),
                         ),
-                        const SizedBox(
-                          height: 50,
+                         SizedBox(
+                          height: 50.h,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 30, right: 20),

@@ -96,61 +96,61 @@ class _ShareStoreViewState extends State<ShareStoreView> {
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 100,
                   ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      w10,
-                      Image.asset(
-                        "assets/icons/share_store/Group 1382.png",
-                        height: 85,
-                      ),
-                      w15,
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Business",
-                            style: primaryFont.copyWith(
-                                fontSize: 26, fontWeight: FontWeight.w600),
-                          ),
-                          Text(
-                            "Agriculture",
-                            style: primaryFont.copyWith(fontSize: 15),
-                          ),
-                          h10,
-                          Row(
-                            children: [
-                              Icon(
-                                Icons.call,
-                                color: Colors.black,
-                                size: 16,
-                              ),
-                              w10,
-                              Text("9876446683")
-                            ],
-                          ),
-                          h10,
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Icon(
-                                Icons.location_on,
-                                color: Colors.black,
-                                size: 16,
-                              ),
-                              w10,
-                              Text(
-                                "Patel Road,Perambur,\nChennai,600021",
-                                style: primaryFont.copyWith(fontSize: 13),
-                              )
-                            ],
-                          )
-                        ],
-                      )
-                    ],
-                  ),
+                  // Row(
+                  //   crossAxisAlignment: CrossAxisAlignment.start,
+                  //   children: [
+                  //     w10,
+                  //     Image.asset(
+                  //       "assets/icons/share_store/Group 1382.png",
+                  //       height: 85,
+                  //     ),
+                  //     w15,
+                  //     Column(
+                  //       crossAxisAlignment: CrossAxisAlignment.start,
+                  //       children: [
+                  //         Text(
+                  //           "Business",
+                  //           style: primaryFont.copyWith(
+                  //               fontSize: 26, fontWeight: FontWeight.w600),
+                  //         ),
+                  //         Text(
+                  //           "Agriculture",
+                  //           style: primaryFont.copyWith(fontSize: 15),
+                  //         ),
+                  //         h10,
+                  //         Row(
+                  //           children: [
+                  //             Icon(
+                  //               Icons.call,
+                  //               color: Colors.black,
+                  //               size: 16,
+                  //             ),
+                  //             w10,
+                  //             Text("9876446683")
+                  //           ],
+                  //         ),
+                  //         h10,
+                  //         Row(
+                  //           crossAxisAlignment: CrossAxisAlignment.start,
+                  //           children: [
+                  //             Icon(
+                  //               Icons.location_on,
+                  //               color: Colors.black,
+                  //               size: 16,
+                  //             ),
+                  //             w10,
+                  //             Text(
+                  //               "Patel Road,Perambur,\nChennai,600021",
+                  //               style: primaryFont.copyWith(fontSize: 13),
+                  //             )
+                  //           ],
+                  //         )
+                  //       ],
+                  //     )
+                  //   ],
+                  // ),
                   h30,
                   Image.asset(
                     "assets/icons/share_store/Group 1383.png",

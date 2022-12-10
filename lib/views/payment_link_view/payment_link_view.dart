@@ -5,6 +5,7 @@ import 'package:konnect/const/app_fonts.dart';
 import 'package:konnect/const/helpers/space_helpers.dart';
 import 'package:konnect/controllers/transaction_controller.dart';
 import 'package:konnect/views/payment_link_view/add_pay_link_customer.dart';
+import 'package:konnect/views/payment_link_view/create_new_link_view.dart';
 
 class PaymentLinkView extends StatefulWidget {
   const PaymentLinkView({super.key});
@@ -135,10 +136,10 @@ class _PaymentLinkViewState extends State<PaymentLinkView> {
                                     borderRadius: BorderRadius.circular(7),
                                     border: Border.all(color: Colors.black)),
                                 child: Row(
-                                  children: [
+                                  children: const [
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsets.only(
+                                        padding: EdgeInsets.only(
                                             left: 10, right: 10),
                                         child: TextField(
                                           decoration: InputDecoration.collapsed(
@@ -147,8 +148,8 @@ class _PaymentLinkViewState extends State<PaymentLinkView> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.only(right: 10),
-                                      child: Icon(Icons.contacts_outlined),
+                                      padding: EdgeInsets.only(right: 10),
+                                      child: Icon(Icons.contact_page_outlined),
                                     )
                                   ],
                                 ),
@@ -184,24 +185,76 @@ class _PaymentLinkViewState extends State<PaymentLinkView> {
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          "Your Links",
+                          "Contact Details",
                           style:
                               primaryFont.copyWith(fontWeight: FontWeight.w600),
                         ),
                       ),
                     ],
                   ),
-                  Image.asset("assets/icons/pay_link/Group 1392.png"),
-                  h30,
-                  Text(
-                    "No payment links create yet",
-                    style: primaryFont.copyWith(fontWeight: FontWeight.w600),
-                  ),
-                  h10,
-                  Text(
-                    "Create a payment link by entering\nyour customers phone no",
-                    textAlign: TextAlign.center,
+                h20,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(() => CreateNewLinkView());
+                      },
+                      child: Container(
+                        height: 63,
+                        width: size.width,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 3,
+                                  color: Colors.grey.withOpacity(0.6))
+                            ]),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Container(
+                                height: 58,
+                                width: 58,
+                                decoration: BoxDecoration(
+                                    color: primaryColor,
+                                    borderRadius: BorderRadius.circular(7)),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  "RA",
+                                  style: primaryFont.copyWith(
+                                      color: Colors.white,
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                              ),
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Raja Ana",
+                                  style: primaryFont.copyWith(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 15),
+                                ),
+                                h5,
+                                Text(
+                                  "+91 9847563262",
+                                  style: primaryFont.copyWith(
+                                      fontWeight: FontWeight.w100,
+                                      fontSize: 13),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   )
+
                 ],
               ),
             ),

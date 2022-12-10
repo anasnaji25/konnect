@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
+import 'package:konnect/const/helpers/space_helpers.dart';
 import 'package:konnect/controllers/transaction_controller.dart';
 import 'package:konnect/views/lading_view/lets_get_started_screen.dart';
 import 'package:konnect/views/store_view/amenities_and_features_view.dart';
@@ -29,6 +30,7 @@ class StoreMainListView extends StatefulWidget {
 
 class _StoreMainListViewState extends State<StoreMainListView> {
   final transactionController = Get.find<TransactionController>();
+  bool isCheck = true;
 
   @override
   Widget build(BuildContext context) {
@@ -469,7 +471,7 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                   Padding(
                     padding: const EdgeInsets.only(left: 15, right: 15),
                     child: Container(
-                      height: 320,
+                      height: 450,
                       width: size.width,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
@@ -680,6 +682,40 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                           const Divider(
                             thickness: 1,
                           ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, right: 5),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                      "assets/icons/Layer_2.png",
+                                      height: 14,
+                                    ),
+                                    w10,
+                                    Text(
+                                      "Vehicle Parking",
+                                      style: primaryFont.copyWith(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 12),
+                                    )
+                                  ],
+                                ),
+                                Checkbox(
+                                    activeColor: Colors.green,
+                                    value: isCheck,
+                                    onChanged: (val) {
+                                      setState(() {
+                                        isCheck = val!;
+                                      });
+                                    })
+                              ],
+                            ),
+                          ),
+                          const Divider(
+                            thickness: 1,
+                          ),
                           const SizedBox(
                             height: 10,
                           ),
@@ -720,6 +756,63 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                     )
                                   ],
                                 ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          const Divider(
+                            thickness: 1,
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 25, right: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Image.asset(
+                                      "assets/icons/support.png",
+                                      height: 40,
+                                    ),
+                                    const SizedBox(
+                                      width: 3,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          "Customer Support & Enquiry",
+                                          style: primaryFont.copyWith(
+                                              fontWeight: FontWeight.w600,
+                                              fontSize: 12),
+                                        ),
+                                        Text(
+                                          "+91 9876543210",
+                                          style: primaryFont.copyWith(
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 12),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    Get.to(() => EditMobileNumberView());
+                                  },
+                                  child: const Icon(
+                                    Icons.edit,
+                                    size: 15,
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -955,111 +1048,111 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15, right: 15),
-                    child: Container(
-                      height: 130,
-                      width: size.width,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: Colors.green)),
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 10, right: 10, top: 10),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text(
-                                            "What all amenities do you have?",
-                                            style: primaryFont.copyWith(
-                                                fontSize: 11,
-                                                fontWeight: FontWeight.w600),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 15,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 15, right: 10),
-                                  child: Row(
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            "Adding facilities will help customers\nchoose the right store for them.",
-                                            style: primaryFont.copyWith(
-                                                fontSize: 11),
-                                          ),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              Get.to(() =>
-                                                  AmenitiesAndFeaturesView());
-                                            },
-                                            child: Container(
-                                              height: 30,
-                                              width: 120,
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: const Color(
-                                                          0xff543DE0)),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          20)),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [
-                                                  Text(
-                                                    "ADD AMENITIES",
-                                                    style: primaryFont.copyWith(
-                                                        fontSize: 11,
-                                                        color: const Color(
-                                                            0xff543DE0)),
-                                                  )
-                                                ],
-                                              ),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                            Image.asset(
-                              "assets/icons/SeekPng.com_ecommerce-png_2474944.png",
-                              height: 90,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+                  // const SizedBox(
+                  //   height: 20,
+                  // ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(left: 15, right: 15),
+                  //   child: Container(
+                  //     height: 130,
+                  //     width: size.width,
+                  //     decoration: BoxDecoration(
+                  //         borderRadius: BorderRadius.circular(10),
+                  //         border: Border.all(color: Colors.green)),
+                  //     child: Padding(
+                  //       padding: const EdgeInsets.only(right: 10),
+                  //       child: Row(
+                  //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //         children: [
+                  //           Column(
+                  //             crossAxisAlignment: CrossAxisAlignment.start,
+                  //             children: [
+                  //               Padding(
+                  //                 padding: const EdgeInsets.only(
+                  //                     left: 10, right: 10, top: 10),
+                  //                 child: Row(
+                  //                   mainAxisAlignment:
+                  //                       MainAxisAlignment.spaceBetween,
+                  //                   children: [
+                  //                     Row(
+                  //                       children: [
+                  //                         Text(
+                  //                           "What all amenities do you have?",
+                  //                           style: primaryFont.copyWith(
+                  //                               fontSize: 11,
+                  //                               fontWeight: FontWeight.w600),
+                  //                         ),
+                  //                       ],
+                  //                     ),
+                  //                   ],
+                  //                 ),
+                  //               ),
+                  //               const SizedBox(
+                  //                 height: 15,
+                  //               ),
+                  //               Padding(
+                  //                 padding: const EdgeInsets.only(
+                  //                     left: 15, right: 10),
+                  //                 child: Row(
+                  //                   children: [
+                  //                     Column(
+                  //                       crossAxisAlignment:
+                  //                           CrossAxisAlignment.start,
+                  //                       children: [
+                  //                         Text(
+                  //                           "Adding facilities will help customers\nchoose the right store for them.",
+                  //                           style: primaryFont.copyWith(
+                  //                               fontSize: 11),
+                  //                         ),
+                  //                         const SizedBox(
+                  //                           height: 10,
+                  //                         ),
+                  //                         InkWell(
+                  //                           onTap: () {
+                  //                             Get.to(() =>
+                  //                                 AmenitiesAndFeaturesView());
+                  //                           },
+                  //                           child: Container(
+                  //                             height: 30,
+                  //                             width: 120,
+                  //                             decoration: BoxDecoration(
+                  //                                 border: Border.all(
+                  //                                     color: const Color(
+                  //                                         0xff543DE0)),
+                  //                                 borderRadius:
+                  //                                     BorderRadius.circular(
+                  //                                         20)),
+                  //                             child: Row(
+                  //                               mainAxisAlignment:
+                  //                                   MainAxisAlignment.center,
+                  //                               children: [
+                  //                                 Text(
+                  //                                   "ADD AMENITIES",
+                  //                                   style: primaryFont.copyWith(
+                  //                                       fontSize: 11,
+                  //                                       color: const Color(
+                  //                                           0xff543DE0)),
+                  //                                 )
+                  //                               ],
+                  //                             ),
+                  //                           ),
+                  //                         )
+                  //                       ],
+                  //                     ),
+                  //                   ],
+                  //                 ),
+                  //               )
+                  //             ],
+                  //           ),
+                  //           Image.asset(
+                  //             "assets/icons/SeekPng.com_ecommerce-png_2474944.png",
+                  //             height: 90,
+                  //           )
+                  //         ],
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -1127,8 +1220,9 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                             height: 10,
                                           ),
                                           InkWell(
-                                            onTap: (){
-                                              Get.to(()=> EditSocilaMediaLinks());
+                                            onTap: () {
+                                              Get.to(
+                                                  () => EditSocilaMediaLinks());
                                             },
                                             child: Container(
                                               height: 30,
@@ -1136,7 +1230,8 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                               decoration: BoxDecoration(
                                                   color: Colors.white,
                                                   borderRadius:
-                                                      BorderRadius.circular(20)),
+                                                      BorderRadius.circular(
+                                                          20)),
                                               child: Padding(
                                                 padding: const EdgeInsets.only(
                                                     right: 5, left: 5),
@@ -1154,10 +1249,11 @@ class _StoreMainListViewState extends State<StoreMainListView> {
                                                     ),
                                                     Text(
                                                       "ADD Links".toUpperCase(),
-                                                      style: primaryFont.copyWith(
-                                                          fontSize: 10,
-                                                          color: const Color(
-                                                              0xffD356F4)),
+                                                      style:
+                                                          primaryFont.copyWith(
+                                                              fontSize: 10,
+                                                              color: const Color(
+                                                                  0xffD356F4)),
                                                     )
                                                   ],
                                                 ),

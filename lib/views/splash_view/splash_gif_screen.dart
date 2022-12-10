@@ -21,7 +21,7 @@ class _SplashGifViewState extends State<SplashGifView> {
 
   redirectToNextScreen() async {
     await Future.delayed(const Duration(seconds: 2));
-    Get.offAll(() => LetsGetStartedView());
+    Get.offAll(() => const LetsGetStartedView(),duration:const Duration(seconds: 1),curve: Curves.easeInSine,transition: Transition.size);
   }
 
   @override

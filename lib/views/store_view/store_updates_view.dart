@@ -129,7 +129,8 @@ class _StoreUpdatesViewState extends State<StoreUpdatesView> {
                                 ),
                                 InkWell(
                                   onTap: () {
-                                    Get.to(() => const UpdateItemsView());
+                                    // Get.to(() => const UpdateItemsView());
+                                    _showMyItemUpdateDialauge(size);
                                   },
                                   child: Text(
                                     "Update now".toUpperCase(),
@@ -157,14 +158,14 @@ class _StoreUpdatesViewState extends State<StoreUpdatesView> {
                   Padding(
                     padding: const EdgeInsets.only(left: 15, right: 15),
                     child: Container(
-                     
                       width: size.width,
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.black),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 10, right: 10,top: 10,bottom: 10),
+                        padding: const EdgeInsets.only(
+                            left: 10, right: 10, top: 10, bottom: 10),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -172,14 +173,15 @@ class _StoreUpdatesViewState extends State<StoreUpdatesView> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
-                                  "Cuatom Post",
+                                  "Custom Post",
                                   style: primaryFont.copyWith(
                                       fontWeight: FontWeight.w600,
                                       fontSize: 14),
                                 ),
                                 InkWell(
                                   onTap: () {
-                                    Get.to(() => UpdateCustomPostView());
+                                    // Get.to(() => UpdateCustomPostView());
+                                    _showMyCustomPostUpdate(size) ;
                                   },
                                   child: Text(
                                     "Update now".toUpperCase(),
@@ -194,10 +196,10 @@ class _StoreUpdatesViewState extends State<StoreUpdatesView> {
                             const SizedBox(
                               height: 10,
                             ),
-                            Text("Last Update: 2nd Nov'22 | 12:25 pm"),
-                            Text("Hi"),
+                           const Text("Last Update: 2nd Nov'22 | 12:25 pm"),
+                            const Text("Hi"),
                             h15,
-                            Text("🕐 Post expiers in 7 days"),
+                          const   Text("🕐 Post expiers in 7 days"),
                           ],
                         ),
                       ),
@@ -209,6 +211,143 @@ class _StoreUpdatesViewState extends State<StoreUpdatesView> {
           ),
         ),
       ),
+    );
+  }
+
+  Future<void> _showMyItemUpdateDialauge(var size) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Container(
+          height: 300,
+          child: AlertDialog(
+            scrollable: true,
+            contentPadding: const EdgeInsets.all(12),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: <Widget>[
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Items Available",
+                        style: primaryFont.copyWith(
+                            fontWeight: FontWeight.w600, fontSize: 14),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: Text(
+                          "Update".toUpperCase(),
+                          style: primaryFont.copyWith(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 10,
+                              color: Colors.blue),
+                        ),
+                      )
+                    ],
+                  ),
+                  h15,
+                  Container(
+                    height: 50,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 3,
+                              color: Colors.grey.withOpacity(0.5))
+                        ]),
+                    alignment: Alignment.centerLeft,
+                    child: const Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: TextField(
+                        decoration:
+                            InputDecoration.collapsed(hintText: "Enter Item"),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+
+    Future<void> _showMyCustomPostUpdate(var size) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Container(
+          height: 300,
+          child: AlertDialog(
+            scrollable: true,
+            contentPadding: const EdgeInsets.all(12),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: <Widget>[
+                  const SizedBox(
+                    height: 7,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Custom Post",
+                        style: primaryFont.copyWith(
+                            fontWeight: FontWeight.w600, fontSize: 14),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: Text(
+                          "Update".toUpperCase(),
+                          style: primaryFont.copyWith(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 10,
+                              color: Colors.blue),
+                        ),
+                      )
+                    ],
+                  ),
+                  h15,
+                  Container(
+                    height: 50,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(7),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 3,
+                              color: Colors.grey.withOpacity(0.5))
+                        ]),
+                    alignment: Alignment.centerLeft,
+                    child: const Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: TextField(
+                        decoration:
+                            InputDecoration.collapsed(hintText: "Enter Latest updates"),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

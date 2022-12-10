@@ -39,6 +39,7 @@ dependencies:
   get: ^4.6.5
   google_fonts: ^3.0.1
   flutter_otp_text_field: ^1.1.1
+  flutter_screenutil: ^5.6.0
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +76,7 @@ flutter:
     - assets/icons/chat/
     - assets/icons/insurance/
     - assets/icons/pay_link/
+    - assets/icons/profile/
     - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see

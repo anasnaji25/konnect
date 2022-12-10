@@ -4,6 +4,7 @@ import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
 import 'package:konnect/const/helpers/space_helpers.dart';
 import 'package:konnect/const/helpers/text_field_style_helpers.dart';
+import 'package:konnect/views/staff_management_view/staff_management_view.dart';
 import 'package:konnect/views/staff_management_view/user_added_succes_page.dart';
 
 class AddUserView extends StatefulWidget {
@@ -509,7 +510,7 @@ class _AddUserViewState extends State<AddUserView> {
                     padding: const EdgeInsets.only(left: 15, right: 15),
                     child: InkWell(
                       onTap: () {
-                        Get.off(() => UserAddedSuccessfullView());
+                        Get.off(() => ManageStaffAndRolesView());
                       },
                       child: Container(
                         height: 45,

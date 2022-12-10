@@ -108,22 +108,7 @@ class _HelpViewState extends State<HelpView> {
                           ]),
                           Row(
                             children: [
-                              Container(
-                                height: 30,
-                                width: 100,
-                                child: Center(
-                                  child: Text("English",
-                                  style: primaryFont.copyWith(
-                              color: Colors.white,
-                              fontSize: 14,
-                                  ),
-                                  ),
-                                ),
-                                decoration: BoxDecoration(
-                                  color: lightGreenColor ,
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                              ),
+                          
                             ],
                           ),
                         ],

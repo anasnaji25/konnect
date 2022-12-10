@@ -50,7 +50,7 @@ void filterBottomSheet(
                         ],
                       ),
                     ),
-                    SizedBox(
+                   const SizedBox(
                       height: 15,
                     ),
                     Container(
@@ -206,40 +206,7 @@ void filterBottomSheet(
                                         ),
                                       ),
                                     ),
-                                    const SizedBox(
-                                      height: 25,
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                        transactionController.filterIndex(4);
-                                      },
-                                      child: Container(
-                                        height: 40,
-                                        width: double.infinity,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                const BorderRadius.only(
-                                                    topLeft: Radius.circular(7),
-                                                    bottomLeft:
-                                                        Radius.circular(7)),
-                                            color: transactionController
-                                                        .filterIndex.value ==
-                                                    4
-                                                ? Colors.white
-                                                : Colors.transparent),
-                                        alignment: Alignment.centerLeft,
-                                        child: Padding(
-                                          padding:
-                                              const EdgeInsets.only(left: 10),
-                                          child: Text(
-                                            "Today",
-                                            style: primaryFont.copyWith(
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w500),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
+                                 
                                   ],
                                 ),
                               ),
@@ -422,94 +389,94 @@ void filterBottomSheet(
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          InkWell(
-                                            onTap: () {
-                                              transactionController.isWallet(
-                                                  !transactionController
-                                                      .isWallet.value);
-                                            },
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                Text(
-                                                  "Wallet",
-                                                  style: primaryFont.copyWith(
-                                                      fontSize: 15),
-                                                ),
-                                                const SizedBox(
-                                                  width: 10,
-                                                ),
-                                                Checkbox(
-                                                    side: const BorderSide(
-                                                        color: Colors.white),
-                                                    value: transactionController
-                                                        .isWallet.value,
-                                                    onChanged: (val) {}),
-                                              ],
-                                            ),
-                                          ),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              transactionController
-                                                  .iscreditCard(
-                                                      !transactionController
-                                                          .iscreditCard.value);
-                                            },
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                Text(
-                                                  "Credit Card",
-                                                  style: primaryFont.copyWith(
-                                                      fontSize: 15),
-                                                ),
-                                                const SizedBox(
-                                                  width: 10,
-                                                ),
-                                                Checkbox(
-                                                    side: const BorderSide(
-                                                        color: Colors.white),
-                                                    value: transactionController
-                                                        .iscreditCard.value,
-                                                    onChanged: (val) {}),
-                                              ],
-                                            ),
-                                          ),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          InkWell(
-                                            onTap: () {
-                                              transactionController.isDebitCard(
-                                                  !transactionController
-                                                      .isDebitCard.value);
-                                            },
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                Text(
-                                                  "Debit card",
-                                                  style: primaryFont.copyWith(
-                                                      fontSize: 15),
-                                                ),
-                                                const SizedBox(
-                                                  width: 10,
-                                                ),
-                                                Checkbox(
-                                                    side: const BorderSide(
-                                                        color: Colors.white),
-                                                    value: transactionController
-                                                        .isDebitCard.value,
-                                                    onChanged: (val) {}),
-                                              ],
-                                            ),
-                                          ),
+                                          // InkWell(
+                                          //   onTap: () {
+                                          //     transactionController.isWallet(
+                                          //         !transactionController
+                                          //             .isWallet.value);
+                                          //   },
+                                          //   child: Row(
+                                          //     mainAxisAlignment:
+                                          //         MainAxisAlignment.spaceAround,
+                                          //     children: [
+                                          //       Text(
+                                          //         "Wallet",
+                                          //         style: primaryFont.copyWith(
+                                          //             fontSize: 15),
+                                          //       ),
+                                          //       const SizedBox(
+                                          //         width: 10,
+                                          //       ),
+                                          //       Checkbox(
+                                          //           side: const BorderSide(
+                                          //               color: Colors.white),
+                                          //           value: transactionController
+                                          //               .isWallet.value,
+                                          //           onChanged: (val) {}),
+                                          //     ],
+                                          //   ),
+                                          // ),
+                                          // const SizedBox(
+                                          //   height: 10,
+                                          // ),
+                                          // InkWell(
+                                          //   onTap: () {
+                                          //     transactionController
+                                          //         .iscreditCard(
+                                          //             !transactionController
+                                          //                 .iscreditCard.value);
+                                          //   },
+                                          //   child: Row(
+                                          //     mainAxisAlignment:
+                                          //         MainAxisAlignment.spaceAround,
+                                          //     children: [
+                                          //       Text(
+                                          //         "Credit Card",
+                                          //         style: primaryFont.copyWith(
+                                          //             fontSize: 15),
+                                          //       ),
+                                          //       const SizedBox(
+                                          //         width: 10,
+                                          //       ),
+                                          //       Checkbox(
+                                          //           side: const BorderSide(
+                                          //               color: Colors.white),
+                                          //           value: transactionController
+                                          //               .iscreditCard.value,
+                                          //           onChanged: (val) {}),
+                                          //     ],
+                                          //   ),
+                                          // ),
+                                          // const SizedBox(
+                                          //   height: 10,
+                                          // ),
+                                          // InkWell(
+                                          //   onTap: () {
+                                          //     transactionController.isDebitCard(
+                                          //         !transactionController
+                                          //             .isDebitCard.value);
+                                          //   },
+                                          //   child: Row(
+                                          //     mainAxisAlignment:
+                                          //         MainAxisAlignment.spaceAround,
+                                          //     children: [
+                                          //       Text(
+                                          //         "Debit card",
+                                          //         style: primaryFont.copyWith(
+                                          //             fontSize: 15),
+                                          //       ),
+                                          //       const SizedBox(
+                                          //         width: 10,
+                                          //       ),
+                                          //       Checkbox(
+                                          //           side: const BorderSide(
+                                          //               color: Colors.white),
+                                          //           value: transactionController
+                                          //               .isDebitCard.value,
+                                          //           onChanged: (val) {}),
+                                          //     ],
+                                          //   ),
+                                          // ),
                                         ],
                                       ),
                                     ),

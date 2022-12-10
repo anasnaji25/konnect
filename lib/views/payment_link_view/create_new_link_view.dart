@@ -177,24 +177,185 @@ class _CreateNewLinkViewState extends State<CreateNewLinkView> {
                           enabledBorder: enabledBorder,
                           focusedBorder: focusedBorder),
                     ),
+                  ),
+                  h30,
+                  Container(
+                    height: 55,
+                    width: 250,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: primaryColor),
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Generate link".toUpperCase(),
+                      style: primaryFont.copyWith(
+                          color: Colors.white, fontSize: 18),
+                    ),
+                  ),
+                  h30,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey),
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          children: [
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              height: 63,
+                              width: size.width,
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(5.0),
+                                          child: Container(
+                                            height: 58,
+                                            width: 58,
+                                            child: Image.asset(
+                                                "assets/icons/pay_link/Group 1393.png"),
+                                          ),
+                                        ),
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              "+91 9847563262",
+                                              style: primaryFont.copyWith(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 15),
+                                            ),
+                                            h5,
+                                            Text(
+                                              "Raja ana",
+                                              style: primaryFont.copyWith(
+                                                  fontWeight: FontWeight.w100,
+                                                  fontSize: 12),
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        Text(
+                                          "PENDING",
+                                          style: primaryFont.copyWith(
+                                              color: Colors.blue, fontSize: 13),
+                                        ),
+                                        Text(
+                                          "Valid till 5 Nov 5:30",
+                                          style: primaryFont.copyWith(
+                                              fontSize: 11),
+                                        )
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            const Divider(
+                              thickness: 1.5,
+                            ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    "ID:IT78974888647DSF8787",
+                                    style: primaryFont.copyWith(
+                                        color: Colors.black45, fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    "₹1",
+                                    style: primaryFont.copyWith(
+                                        color: Colors.black, fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    "Total bill amount for 04 Nov 2022",
+                                    style: primaryFont.copyWith(
+                                        color: Colors.black45, fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            h15,
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  height: 55,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Color.fromARGB(255, 72, 177, 75)),
+                                  alignment: Alignment.center,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 10, right: 10),
+                                    child: Row(
+                                      children: [
+                                        Container(
+                                          height: 30,
+                                          width: 30,
+                                          decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(10)),
+                                                  child: const Icon(Icons.share,color: Colors.green,),
+                                        ),
+                                        w30,
+                                        Text(
+                                          "Share link".toUpperCase(),
+                                          style: primaryFont.copyWith(
+                                              color: Colors.white,
+                                              fontSize: 18),
+                                        ),
+                                         w30,
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   )
                 ],
               ),
-            ),
-          ),
-        ),
-        bottomNavigationBar: InkWell(
-          onTap: () {
-            Get.to(() => PaymentLinkCreatedView());
-          },
-          child: Container(
-            height: 55,
-            width: size.width,
-            color: primaryColor,
-            alignment: Alignment.center,
-            child: Text(
-              "Generate link".toUpperCase(),
-              style: primaryFont.copyWith(color: Colors.white, fontSize: 18),
             ),
           ),
         ),

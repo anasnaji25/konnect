@@ -2,19 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
-import 'package:konnect/const/helpers/space_helpers.dart';
-import 'package:konnect/views/staff_management_view/add_customer_view.dart';
-import 'package:konnect/views/staff_management_view/add_user_view.dart';
+import 'package:konnect/controllers/transaction_controller.dart';
 
-class ManageStaffAndRolesView extends StatefulWidget {
-  const ManageStaffAndRolesView({super.key});
+class TransactionSearchView extends StatefulWidget {
+  const TransactionSearchView({super.key});
 
   @override
-  State<ManageStaffAndRolesView> createState() =>
-      _ManageStaffAndRolesViewState();
+  State<TransactionSearchView> createState() => _TransactionSearchViewState();
 }
 
-class _ManageStaffAndRolesViewState extends State<ManageStaffAndRolesView> {
+class _TransactionSearchViewState extends State<TransactionSearchView> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -40,7 +37,7 @@ class _ManageStaffAndRolesViewState extends State<ManageStaffAndRolesView> {
                     height: 80,
                     width: size.width,
                     decoration:
-                        BoxDecoration(color: secondaryColor.withOpacity(0.1)),
+                        BoxDecoration(color: Colors.white.withOpacity(0.5)),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 15, right: 15),
                       child: Row(
@@ -66,22 +63,31 @@ class _ManageStaffAndRolesViewState extends State<ManageStaffAndRolesView> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "Manage Staff and Roles",
-                                    style: primaryFont.copyWith(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                ],
-                              )
+
+                              //search
                             ],
+                          ),
+                          Container(
+                            height: 45,
+                            width: size.width * 0.7,
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Colors.black),
+                                borderRadius: BorderRadius.circular(30)),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 10, right: 10),
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                      child: TextField(
+                                    decoration: InputDecoration.collapsed(
+                                        hintText:
+                                            "Enter mobile number to Search"),
+                                  )),
+                                  Icon(Icons.search)
+                                ],
+                              ),
+                            ),
                           ),
                           Row(
                             children: [
@@ -98,40 +104,36 @@ class _ManageStaffAndRolesViewState extends State<ManageStaffAndRolesView> {
                       ),
                     ),
                   ),
+                  Divider(),
                   const SizedBox(
-                    height: 60,
+                    height: 20,
                   ),
-                  Image.asset(
-                    "assets/icons/Group 1387.png",
-                    height: 250,
+                  Column(
+                    children: [
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      Image.asset(
+                        "assets/icons/Group 64.png",
+                        height: 250,
+                      ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      Text(
+                        "No transactions found",
+                        style: primaryFont.copyWith(
+                            fontWeight: FontWeight.w600, fontSize: 20),
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                     
+                    ],
                   ),
-                  h50,
-                  Text(
-                    "Get your team onboard",
-                    style: primaryFont.copyWith(
-                        fontSize: 16, fontWeight: FontWeight.w600),
-                  ),
-                  h15,
-                  Text(
-                    "There are no users linked to your account yet",
-                    style: primaryFont.copyWith(
-                      fontSize: 13,
-                    ),
-                  )
                 ],
               ),
             ),
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Get.off(() => AddUserView());
-          },
-          backgroundColor: secondaryColor,
-          child: const Icon(
-            Icons.add,
-            size: 30,
-            color: Colors.white,
           ),
         ),
       ),

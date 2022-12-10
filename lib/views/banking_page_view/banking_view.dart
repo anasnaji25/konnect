@@ -117,40 +117,83 @@ class _BankingViewFirstState extends State<BankingViewFirst> {
                         color: Colors.black54, fontSize: 14),
                   ),
                   h15,
-                  InkWell(
-                    onTap: () {
-                      Get.to(() => AddBankAccountView());
-                    },
-                    child: Container(
-                      height: 50,
-                      width: 160,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(5),
-                          boxShadow: const [
-                            BoxShadow(blurRadius: 2, color: Colors.grey)
-                          ]),
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10, right: 10),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Image.asset(
-                                "assets/icons/290147_bank_cash_finance_money_payment_icon.png",
-                                height: 27,
-                              ),
-                              w10,
-                              Text(
-                                "Get Started",
-                                style: primaryFont.copyWith(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.black45),
-                              )
+                  Padding(
+                    padding: const EdgeInsets.only(left: 30,right: 30),
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(() => AddBankAccountView());
+                      },
+                      child: Container(
+                        height: 50,
+                       
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                            boxShadow: const [
+                              BoxShadow(blurRadius: 2, color: Colors.grey)
                             ]),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 10),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  "assets/icons/290147_bank_cash_finance_money_payment_icon.png",
+                                  height: 27,
+                                ),
+                                w25,
+                                Text(
+                                  "Link Bank Account",
+                                  style: primaryFont.copyWith(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black45),
+                                )
+                              ]),
+                        ),
                       ),
                     ),
-                  )
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 30,right: 30),
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(() => AddBankAccountView());
+                      },
+                      child: Container(
+                        height: 50,
+                        
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(5),
+                            boxShadow: const [
+                              BoxShadow(blurRadius: 2, color: Colors.grey)
+                            ]),
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 10),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  "assets/icons/290147_bank_cash_finance_money_payment_icon.png",
+                                  height: 27,
+                                ),
+                                w25,
+                                Text(
+                                  "Apply New Business Account",
+                                  style: primaryFont.copyWith(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black45),
+                                )
+                              ]),
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

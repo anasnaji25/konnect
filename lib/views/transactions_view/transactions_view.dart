@@ -5,6 +5,7 @@ import 'package:konnect/const/app_colors.dart';
 import 'package:konnect/const/app_fonts.dart';
 import 'package:konnect/controllers/transaction_controller.dart';
 import 'package:konnect/views/lading_view/lets_get_started_screen.dart';
+import 'package:konnect/views/transactions_view/transaction_search_view.dart';
 import 'package:konnect/widgets/transaction_widgets/filter_bottom_sheet.dart';
 import 'package:konnect/widgets/transaction_widgets/transactions_card.dart';
 
@@ -76,10 +77,15 @@ class _TransactionViewState extends State<TransactionView> {
                             ),
                             Row(
                               children:  [
-                              const  Icon(
-                                  Icons.search,
-                                  color: Color.fromARGB(255, 122, 122, 122),
-                                ),
+                              InkWell(
+                                onTap: (){
+                                  Get.to(()=> TransactionSearchView());
+                                },
+                                child: const  Icon(
+                                    Icons.search,
+                                    color: Color.fromARGB(255, 122, 122, 122),
+                                  ),
+                              ),
                               const  SizedBox(
                                   width: 10,
                                 ),
@@ -188,7 +194,7 @@ class _TransactionViewState extends State<TransactionView> {
                       thickness: 1.5,
                       color: Colors.teal.withOpacity(0.3),
                     ),
-                    if (transactionController.transactionIndex.value == 1)
+                    if (transactionController.transactionIndex.value == 5)
                       Column(
                         children: [
                           const SizedBox(
@@ -243,7 +249,143 @@ class _TransactionViewState extends State<TransactionView> {
                             title: "Raja mani",
                           ),
                         ],
-                      )
+                      ),
+
+                        if (transactionController.transactionIndex.value == 1)
+                      Column(
+                        children: [
+                          const SizedBox(
+                            height: 10,
+                          ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 15),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        height: 18,
+                                        width: 18,
+                                        decoration: BoxDecoration(
+                                          color: Colors.blue,
+                                          borderRadius: BorderRadius.circular(30)
+                                        ),
+                                      ),
+                                     const SizedBox(
+                                        width: 7,
+                                      ),
+                                      Text("Sales",style: primaryFont.copyWith(
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 20
+                                      ),)
+                                    ],
+                                  ),
+                                   Text(
+                                  "₹25000",
+                                  style: primaryFont.copyWith(
+                                      fontWeight: FontWeight.w500, fontSize: 20),
+                                )
+                                ],
+                              ),
+                            ),
+                           const SizedBox(
+                              height: 10,
+                            ),
+                           const Divider(
+                              thickness: 1.5,
+                            ),
+
+                            const SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 15),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      height: 18,
+                                      width: 18,
+                                      decoration: BoxDecoration(
+                                          color: Colors.yellow,
+                                          borderRadius:
+                                              BorderRadius.circular(30)),
+                                    ),
+                                    const SizedBox(
+                                      width: 7,
+                                    ),
+                                    Text(
+                                      "Payments",
+                                      style: primaryFont.copyWith(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 20),
+                                    )
+                                  ],
+                                ),
+                                Text(
+                                  "₹35000",
+                                  style: primaryFont.copyWith(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 20),
+                                )
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          const Divider(
+                            thickness: 1.5,
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 10, right: 15),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+                                      height: 18,
+                                      width: 18,
+                                      decoration: BoxDecoration(
+                                          color:const Color.fromARGB(255, 65, 8, 172),
+                                          borderRadius:
+                                              BorderRadius.circular(30)),
+                                    ),
+                                    const SizedBox(
+                                      width: 7,
+                                    ),
+                                    Text(
+                                      "Expenses",
+                                      style: primaryFont.copyWith(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: 20),
+                                    )
+                                  ],
+                                ),
+                                Text(
+                                  "₹65000",
+                                  style: primaryFont.copyWith(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 20),
+                                )
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          const Divider(
+                            thickness: 1.5,
+                          ),
+                        ],
+                      ),
                   ],
                 )),
           ),

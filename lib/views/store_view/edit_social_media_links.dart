@@ -164,13 +164,118 @@ class _EditSocilaMediaLinksState extends State<EditSocilaMediaLinks> {
                       ),
                     ),
                   ),
+                   Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Text(
+                          "Facebook",
+                          style: primaryFont.copyWith(
+                              fontWeight: FontWeight.w600, fontSize: 15),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 15, right: 15, top: 5, bottom: 15),
+                    child: Container(
+                      height: 55,
+                      width: size.width,
+                      child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "Facebook",
+                            enabledBorder: enabledBorder,
+                            focusedBorder: focusedBorder),
+                      ),
+                    ),
+                  ),
+                   Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Text(
+                          "Twitter",
+                          style: primaryFont.copyWith(
+                              fontWeight: FontWeight.w600, fontSize: 15),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 15, right: 15, top: 5, bottom: 15),
+                    child: Container(
+                      height: 55,
+                      width: size.width,
+                      child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "Twitter",
+                            enabledBorder: enabledBorder,
+                            focusedBorder: focusedBorder),
+                      ),
+                    ),
+                  ),
+
+                   Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Text(
+                          "Telegram",
+                          style: primaryFont.copyWith(
+                              fontWeight: FontWeight.w600, fontSize: 15),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 15, right: 15, top: 5, bottom: 15),
+                    child: Container(
+                      height: 55,
+                      width: size.width,
+                      child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "Telegram",
+                            enabledBorder: enabledBorder,
+                            focusedBorder: focusedBorder),
+                      ),
+                    ),
+                  ),
+                   Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Text(
+                          "Snapchat",
+                          style: primaryFont.copyWith(
+                              fontWeight: FontWeight.w600, fontSize: 15),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 15, right: 15, top: 5, bottom: 15),
+                    child: Container(
+                      height: 55,
+                      width: size.width,
+                      child: TextField(
+                        decoration: InputDecoration(
+                            hintText: "Snapchat",
+                            enabledBorder: enabledBorder,
+                            focusedBorder: focusedBorder),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
         ),
         bottomNavigationBar: Container(
-          height: 120,
+          height: 115,
           color: Colors.white,
           child: Column(
             children: [
@@ -197,7 +302,7 @@ class _EditSocilaMediaLinksState extends State<EditSocilaMediaLinks> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 15,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 30, right: 20),
