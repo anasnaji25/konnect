@@ -21,19 +21,16 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
         designSize: const Size(392, 850),
         minTextAdapt: true,
-        useInheritedMediaQuery: true,
-        rebuildFactor: (o, n) => false,
+        splitScreenMode: true,
         builder: (context, child) {
-        return GetMaterialApp(
-          title: 'Konnect',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
-          home: const SplashGifView(),
-          // home: LandingView(),
-        );
-      }
-    );
+          return GetMaterialApp(
+            title: 'Konnect',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            home: const SplashGifView(),
+          );
+        });
   }
 }

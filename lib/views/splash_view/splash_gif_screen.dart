@@ -13,6 +13,8 @@ class SplashGifView extends StatefulWidget {
 }
 
 class _SplashGifViewState extends State<SplashGifView> {
+
+  
   @override
   void initState() {
     super.initState();
@@ -21,7 +23,7 @@ class _SplashGifViewState extends State<SplashGifView> {
 
   redirectToNextScreen() async {
     await Future.delayed(const Duration(seconds: 2));
-    Get.offAll(() => const LetsGetStartedView(),duration:const Duration(seconds: 1),curve: Curves.easeInSine,transition: Transition.size);
+    Get.offAll(() => const LetsGetStartedView());
   }
 
   @override
@@ -30,7 +32,7 @@ class _SplashGifViewState extends State<SplashGifView> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Image.asset("assets/images/Konnect app gif.gif"),
+        child: Image(image: AssetImage("assets/images/Konnect app gif.gif")),
       ),
     );
   }
